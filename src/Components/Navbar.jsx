@@ -99,6 +99,10 @@ color:white;
 background-color:palevioletred;
 font-size:1em;
 padding:7px;
+&:hover{
+    background-color:palegoldenrod;
+    color:black;
+}
 
 border-radius:15px;
 text-decoration:none;
