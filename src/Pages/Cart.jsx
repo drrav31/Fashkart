@@ -164,7 +164,7 @@ const Empty = styled.div`
 `;
 
 const Cart = () => {
-  const cart = useSelector(state=>state.cart)
+  const cart = useSelector(state=>state.cart);
   const [stripeToken, setStripeTOken] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch()
@@ -196,6 +196,7 @@ const Cart = () => {
   const handleClick = () => {
     dispatch(emptyCart())
   }
+
   return (
     <Container>
       <Navbar />
@@ -203,7 +204,6 @@ const Cart = () => {
       <Wrapper>
         <Title>YOUR SHOPPING BAG</Title>
         <Top>
-          {/* <TopButton>CONTINUE SHOPPING</TopButton> */}
           <TopTexts>
             <TopText>Shopping Bag({cart.quantity})</TopText>
             <TopText onClick={handleClick}>Empty your cart</TopText>

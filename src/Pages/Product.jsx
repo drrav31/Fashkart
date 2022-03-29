@@ -127,7 +127,8 @@ const Product = () => {
   const [quantity, setQuantity] = useState(1);
   const [color, setColor] = useState("");
   const [size, setSize] = useState("");
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  // const user = useSelector((state) => state.user.currentUser);
   useEffect(() =>{
     const getProduct = async () => {
       try{
@@ -155,6 +156,7 @@ const Product = () => {
   const handleClick = ()=>{
     dispatch(addProduct({...prod, quantity, color, size}))
   };
+
   return (
     <Container>
       <Navbar />
