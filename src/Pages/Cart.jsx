@@ -179,7 +179,6 @@ const Cart = () => {
           amount:cart.totalPrice * 100,
           paymentMethodType:"card"
         })
-        console.log(res.data.client_secret)
 
         navigate("/success",{state:{stripeData:res.data, products:cart}});
 

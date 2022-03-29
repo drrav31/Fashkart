@@ -14,7 +14,7 @@ const Success = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        backgroundImage: "linear-gradient(to right, rgb(255, 148, 114), rgb(242, 112, 156))",
+        backgroundImage: "linear-gradient(to top, rgb(255, 148, 114), rgb(242, 112, 156))",
         fontSize: 20
       }}
     >
