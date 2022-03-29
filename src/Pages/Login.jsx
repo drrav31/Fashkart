@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { login } from "../Redux/apiCalls";
 import {mobile} from "../responsive";
@@ -115,11 +116,13 @@ const Login = () => {
   const [username, setUserName] = useState("")
   const [password, setPassword] = useState("")
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const {isFetching, error} = useSelector((state) => state.user)
 
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
-    login(dispatch, {username, password})
+    await login(dispatch, {username, password})
+    navigate(-1);
   }
 
   const togglePass = () => {
@@ -137,7 +140,7 @@ const Login = () => {
       
       <Wrapper>
         <Title>Sign In</Title>
-        <Welcome>Welcome back, Login to Continue</Welcome>
+        <Welcome>Welcome back. Login to Continue</Welcome>
         <Form>
           <Input placeholder="Username" required onChange = {(e) => setUserName(e.target.value)} />
           <Input id = "password" type = "password" placeholder="Password" required onChange = {(e) => setPassword(e.target.value)}/>
