@@ -28,11 +28,13 @@ const Left = styled.div`
 
 `
 const Logo = styled.a`
-color:paleviolet;
-font-weight:bold;
-font-size:2em;
 text-decoration:none;
-${mobile({fontSize:"1.5em"})}
+`
+
+const Logoimg = styled.img`
+    width:250px;
+    height:50px;
+    ${mobile({width:"100px",height:"40px"})};
 `
 
 const Center = styled.div`
@@ -111,9 +113,9 @@ ${mobile({fontSize:"12px"})};
 `
 const Greeting = styled.span`
     margin-right: 20px;
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 600;
-
+    ${mobile({fontSize:"12px", marginLeft:"5px", fontWeight:500,marginRight:"5px"})};
 `
 
 const Navbar = () => {
@@ -130,7 +132,7 @@ const Navbar = () => {
     return (
         <Container>
             <Wrapper>
-                <Left><Logo href = "/"><img src = {logo} alt ="FASHKART" width="250" height="50"/></Logo></Left>
+                <Left><Logo href = "/"><Logoimg src = {logo} alt ="FASHKART"/></Logo></Left>
                 <Center><SearchContainer><SearchInput placeholder="Search for Items,Brands or Styles..."/><Search style = {{color:"grey", height:"30px",borderRadius:"3px", cursor:"pointer"}}/></SearchContainer></Center>
                 {!user?(<Right><Signup as="a" href="/register">Sign Up</Signup>
                        <Login as="a" href="/login">Login</Login>

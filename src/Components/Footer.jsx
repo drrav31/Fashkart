@@ -26,13 +26,16 @@ import { useSelector } from "react-redux";
   `;
   
   const Logo = styled.a`
-    font-weight:bold;
-    font-size:2em;
+
     text-decoration:none;
     padding-bottom: 10px;
-    ${mobile({fontSize:"1.5em"})}
+    ${mobile({})}
  `
-  
+  const Logoimg = styled.img`
+    width:250px;
+    height:50px;
+    ${mobile({width:"200px", height:"50px"})};
+  `
   
   const SocialContainer = styled.div`
     display: flex;
@@ -48,12 +51,13 @@ import { useSelector } from "react-redux";
     align-items: center;
     justify-content: center;
     margin-right: 20px;
+    /* ${mobile({width:"20px", height:"20px"})} */
   `;
   
   const Center = styled.div`
     flex: 1;
     padding: 20px;
-    ${mobile({ display: "none" })}
+    /* ${mobile({ display: "none" })} */
   `;
   
   const Title = styled.h3`
@@ -76,7 +80,7 @@ import { useSelector } from "react-redux";
   const Right = styled.div`
     flex: 1;
     padding: 20px;
-    ${mobile({ backgroundColor: "#fff8f8" })}
+    /* ${mobile({ backgroundColor: "#fff8f8" })} */
   `;
   
   const ContactItem = styled.div`
@@ -99,7 +103,7 @@ import { useSelector } from "react-redux";
     return (
       <Container>
         <Left>
-          <Logo href="#"><img src = {logo} alt = "FASHKART" width="250" height="60"></img></Logo>
+          <Logo href="#"><Logoimg src = {logo} alt = "FASHKART"/></Logo>
           
           <SocialContainer>
             <SocialIcon color="3B5999">
@@ -128,6 +132,7 @@ import { useSelector } from "react-redux";
             <ListItem><Link href="/">Order Tracking</Link></ListItem>
             <ListItem><Link href="/">Wishlist</Link></ListItem>
             <ListItem><Link href="/">Terms</Link></ListItem>
+            <ListItem><Link href="/">Privacy Policy</Link></ListItem>
           </List>
         </Center>
         <Right>

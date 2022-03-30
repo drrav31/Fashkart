@@ -7,7 +7,7 @@ import {mobile} from "../responsive";
 
 const Container = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 110vh;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -21,8 +21,8 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  width: 320px;
-  height: 420px;
+  width: 75vw;
+  max-width:400px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -33,7 +33,7 @@ const Wrapper = styled.div`
   justify-content: space-evenly;
   padding: 1rem;
   background-color: white;
-  ${mobile({ width: "75%" })}
+  ${mobile({ marginTop: 10,width: "75%",height:"90%"})}
   box-shadow: 0 10px 15px rgba(159, 159, 159, 0.7);
   background-image: linear-gradient(to right, rgb(255, 148, 114), rgb(242, 112, 156));
 

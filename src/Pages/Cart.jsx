@@ -34,7 +34,6 @@ const Top = styled.div`
 `;
 
 const TopTexts = styled.div`
-  ${mobile({ display: "none" })}
 `;
 const TopText = styled.span`
   text-decoration: underline;
@@ -92,27 +91,27 @@ const PriceDetail = styled.div`
   display: flex;
   flex:1;
   flex-direction: column;
-
   align-items: center;
   justify-content: space-evenly;
+  ${mobile({alignItems: 'flex-end', marginRight:100})};
 `;
 
 const ProductAmountContainer = styled.div`
-  display: flex;
-  align-items: center;
   margin-bottom: 20px;
+  
 `;
 
 const ProductAmount = styled.div`
   font-size: 24px;
   margin: 5px;
-  ${mobile({ margin: "5px 15px" })}
+  font-weight: 600;
+  ${mobile({margin:"5px 20px", fontSize: 16})};
 `;
 
 const ProductPrice = styled.div`
-  font-size: 30px;
-  font-weight: 200;
-  ${mobile({ marginBottom: "20px" })}
+  font-size: 24px;
+  font-weight: 600;
+  ${mobile({ marginBottom: "20px", marginLeft:"280px", fontSize: 16 })}
 `;
 
 const Hr = styled.hr`
@@ -127,6 +126,7 @@ const Summary = styled.div`
   border-radius: 10px;
   padding: 20px;
   height: 50vh;
+  ${mobile({ height: "25vh"})}
 `;
 
 const SummaryTitle = styled.h1`
@@ -151,7 +151,12 @@ const Button = styled.button`
   background-color: black;
   color: white;
   font-weight: 600;
+  border:none;
+  border-radius:7px;
   cursor: pointer;
+  &:hover{
+    opacity:0.6;
+  }
 `;
 
 const Empty = styled.div`
@@ -160,6 +165,7 @@ const Empty = styled.div`
   color: rgb(112, 108, 105);
   font-size: 1.5em;
   margin-top: 100px;
+  ${mobile({margin:"70px auto", fontSize:"1em"})};
   
 `;
 
@@ -229,7 +235,7 @@ const Cart = () => {
               </ProductDetail>
               <PriceDetail>
                 <ProductAmountContainer>
-                <ProductAmount>Quantity: {product.quantity}</ProductAmount>
+                <ProductAmount>Qty: {product.quantity}</ProductAmount>
                 </ProductAmountContainer>
                 <ProductPrice>Amount: ₹ {product.price * product.quantity}</ProductPrice>
               </PriceDetail>

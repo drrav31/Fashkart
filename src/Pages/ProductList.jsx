@@ -52,9 +52,10 @@ const ProductList = () => {
   }
   return (
     <Container>
-      <Navbar />
       <Announcements />
-      <Title>{cat}</Title>
+      <Navbar />
+      
+      {cat?<Title>{cat}</Title>:<Title>All Products</Title>}
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products:</FilterText>

@@ -29,10 +29,6 @@ const Arrow = styled.div`
     cursor: pointer;
     opacity: 0.5;
     z-index:2;
-
-
-
-
 `
 const Wrapper = styled.div`
     display:flex;
@@ -45,7 +41,7 @@ const Slide = styled.div`
     height: 100vh;
     display:flex;
     align-items: center;
-    background-color:${props=>props.bg}
+    background-color:${props=>props.bg};
 `
 const ImgContainer = styled.div`
 height: 100%;
@@ -110,4 +106,4 @@ const Slider = () => {
     )
 }
 
-export default Slider
+export default Slider;
