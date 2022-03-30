@@ -55,7 +55,7 @@ const ProductList = () => {
       <Announcements />
       <Navbar />
       
-      {cat?<Title>{cat}</Title>:<Title>All Products</Title>}
+      {cat?<Title>{cat[0].toUpperCase() + cat.substring(1)}</Title>:<Title>All Products</Title>}
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products:</FilterText>

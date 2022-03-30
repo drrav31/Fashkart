@@ -126,6 +126,7 @@ const Summary = styled.div`
   border-radius: 10px;
   padding: 20px;
   height: 50vh;
+  margin-bottom:60px;
   ${mobile({ height: "25vh"})}
 `;
 
@@ -145,6 +146,21 @@ const SummaryItemText = styled.span``;
 
 const SummaryItemPrice = styled.span``;
 
+const CardDetails = styled.div`
+  justify-content: center;
+  margin: auto;
+  align-items: center;
+  display: flex;
+  padding-top: 20px;
+  margin-top: 25px;
+`;
+const Text = styled.span`
+  text-align: center;
+  font-size:13px;
+  color:#8a8a8a;
+  ${mobile({ fontSize: "0.8rem" })};
+`;
+
 const Button = styled.button`
   width: 100%;
   padding: 10px;
@@ -161,10 +177,10 @@ const Button = styled.button`
 
 const Empty = styled.div`
   text-align: center;
-  justify-content: center;
+  align-items: center;
   color: rgb(112, 108, 105);
   font-size: 1.5em;
-  margin-top: 100px;
+  margin: 100px auto;
   ${mobile({margin:"70px auto", fontSize:"1em"})};
   
 `;
@@ -240,10 +256,9 @@ const Cart = () => {
                 <ProductPrice>Amount: ₹ {product.price * product.quantity}</ProductPrice>
               </PriceDetail>
               <Hr />
-            </Product>
-            ))
+            </Product>))
             :<Empty>Your Cart is Empty. Click <a style={{textDecoration:"none", fontWeight:700, color:"palevioletred"}}href= "/products">here</a> to add products</Empty>}
-          </Info>
+            </Info>
           <Summary>
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
             <SummaryItem>
@@ -275,7 +290,13 @@ const Cart = () => {
             >
             {cart.totalPrice>0?<Button>Checkout Now</Button>:<Button disabled>Checkout Now</Button>} 
             </StripeCheckout>
+            <CardDetails>
+              <Text>
+                For payment use 4242 4242 4242 4242 as your card number with any CVC and future date
+              </Text>
+            </CardDetails>
           </Summary>
+          
         </Bottom>
       </Wrapper>
       <Footer />

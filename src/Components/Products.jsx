@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components"
 import Product from "./Product";
 
@@ -18,7 +19,9 @@ const NotAvailable = styled.div`
 `
 
 const Products = ({cat,filters,sort}) => {
-    const[products,setProducts] = useState([]);
+  const location = useLocation();
+  const path = location.pathname.split('/')[1];
+  const[products,setProducts] = useState([]);
   const[filteredProducts,setFilteredProducts] = useState([]);
 
   useEffect(() => {
@@ -70,7 +73,7 @@ const Products = ({cat,filters,sort}) => {
     <Container>
         {cat ? (filteredProducts.length>0 ? filteredProducts.map((item) => 
             <Product item={item} key = {item._id}/>):<NotAvailable>No Products Available!..Please Refresh the Page.</NotAvailable>)
-            : products.slice(0,8).map((item) => <Product item = {item} key = {item._id}/>)
+            : path?products.map((item) => <Product item = {item} key = {item._id}/>):products.slice(0,8).map((item) => <Product item = {item} key = {item._id}/>)
         }
 
     </Container>

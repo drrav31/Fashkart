@@ -49,6 +49,7 @@ const SearchContainer = styled.div`
     align-items:center;
     border-radius:5px;
     border: 2px solid black;
+    ${mobile({height:"20px"})}
 
 `
 const SearchInput = styled.input`
@@ -59,10 +60,8 @@ const SearchInput = styled.input`
     font-size: 16px;
     outline:none;
     border-radius: 3px;
-    ${mobile({width:"50px"})};
-    
 
-
+    ${mobile({width:"45px", height:"10px", fontSize:"14px"})};
 `
 const Right = styled.div`
     display:flex;
@@ -133,7 +132,7 @@ const Navbar = () => {
         <Container>
             <Wrapper>
                 <Left><Logo href = "/"><Logoimg src = {logo} alt ="FASHKART"/></Logo></Left>
-                <Center><SearchContainer><SearchInput placeholder="Search for Items,Brands or Styles..."/><Search style = {{color:"grey", height:"30px",borderRadius:"3px", cursor:"pointer"}}/></SearchContainer></Center>
+                <Center><SearchContainer><SearchInput placeholder="Search for Items,Brands or Styles..."/><Search style = {{color:"grey", height:"22px",borderRadius:"3px", cursor:"pointer"}}/></SearchContainer></Center>
                 {!user?(<Right><Signup as="a" href="/register">Sign Up</Signup>
                        <Login as="a" href="/login">Login</Login>
                        <Link to = '/cart'>

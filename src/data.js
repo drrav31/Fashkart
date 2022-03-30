@@ -27,7 +27,7 @@ export const categories = [
     {
       id: 1,
       img: "https://burst.shopifycdn.com/photos/young-man-in-bright-fashion.jpg?width=925&format=pjpg&exif=1&iptc=1",
-      title: "STYLISH SHIRTS!",
+      title: "STYLISH SHIRTS",
     },
     {
       id: 2,
